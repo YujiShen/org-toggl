@@ -48,6 +48,8 @@
 (defvar org-toggl-loaded nil
   "Whether org-toggl has been loaded. Used to determine whether should start an entry on Emacs restart.")
 
+(if ())
+
 (defun toggl-create-api-url (string)
   "Prepend Toogl API URL to STRING."
   (concat toggl-api-url string))
@@ -212,7 +214,7 @@ By default, delete the current one."
   "Start a Toggl time entry based on current heading."
   (interactive)
   ;; do not start an entry if Emacs restart and resume a clock
-  (if (or org-toggl-loaded (not org-clock-loaded))
+  (if (or org-toggl-loaded (not toggl-current-time-entry))
     (let* ((heading (substring-no-properties (org-get-heading t t t t)))
          (project (org-entry-get (point) "toggl-project" org-toggl-inherit-toggl-properties))
          (pid (toggl-get-pid project)))
