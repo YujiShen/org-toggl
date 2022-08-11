@@ -48,8 +48,6 @@
 (defvar org-toggl-loaded nil
   "Whether org-toggl has been loaded. Used to determine whether should start an entry on Emacs restart.")
 
-(if ())
-
 (defun toggl-create-api-url (string)
   "Prepend Toogl API URL to STRING."
   (concat toggl-api-url string))
